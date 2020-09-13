@@ -1,0 +1,51 @@
+{
+  "name": "@fiahfy/material-web-components",
+  "description": "WIP",
+  "version": "0.0.5",
+  "author": {
+    "name": "fiahfy",
+    "email": "d.fiahfy@gmail.com",
+    "url": "https://fiahfy.github.io/"
+  },
+  "bugs": {
+    "url": "https://github.com/fiahfy/material-web-components/issues"
+  },
+  "devDependencies": {
+    "@fiahfy/eslint-config": "^0.0.7",
+    "@types/jest": "^26.0.9",
+    "@types/node": "^14.0.27",
+    "eslint": "^7.6.0",
+    "jest": "^26.2.2",
+    "parcel": "^1.12.4",
+    "prettier": "^2.0.5",
+    "ts-jest": "^26.1.4",
+    "typescript": "^3.9.7"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "files": [
+    "dist"
+  ],
+  "homepage": "https://github.com/fiahfy/material-web-components",
+  "keywords": [],
+  "license": "MIT",
+  "main": "dist/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fiahfy/material-web-components.git"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "parcel examples/index.html",
+    "lint": "eslint -f codeframe --ext .js,.ts --ignore-path .gitignore .",
+    "test": "npm run lint && jest"
+  },
+  "types": "dist/index.d.js",
+  "browserslist": [
+    "last 1 Chrome version"
+  ]
+}
