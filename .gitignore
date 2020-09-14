@@ -62,3 +62,4 @@ dist
 
 # Parcel cache
 .cache
+.parcel-cache

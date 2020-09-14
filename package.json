@@ -7,8 +7,14 @@
     "email": "d.fiahfy@gmail.com",
     "url": "https://fiahfy.github.io/"
   },
+  "browserslist": [
+    "last 1 Chrome version"
+  ],
   "bugs": {
     "url": "https://github.com/fiahfy/material-web-components/issues"
+  },
+  "dependencies": {
+    "material-components-web": "^7.0.0"
   },
   "devDependencies": {
     "@fiahfy/eslint-config": "^0.0.7",
@@ -16,8 +22,9 @@
     "@types/node": "^14.0.27",
     "eslint": "^7.6.0",
     "jest": "^26.2.2",
-    "parcel": "^1.12.4",
+    "parcel": "^2.0.0-beta.1",
     "prettier": "^2.0.5",
+    "sass": "^1.26.10",
     "ts-jest": "^26.1.4",
     "typescript": "^3.9.7"
   },
@@ -44,8 +51,5 @@
     "lint": "eslint -f codeframe --ext .js,.ts --ignore-path .gitignore .",
     "test": "npm run lint && jest"
   },
-  "types": "dist/index.d.js",
-  "browserslist": [
-    "last 1 Chrome version"
-  ]
+  "types": "dist/index.d.js"
 }
