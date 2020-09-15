@@ -1,12 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Roboto+Mono:400,500|Material+Icons" rel="stylesheet">
     <script src="../src/index.ts" defer></script>
   </head>
   <body>
     <div>
+      <h3>button</h3>
+      <h4>variant</h4>
       <m-button>text button</m-button>
-      <m-button outline>outlined button</m-button>
+      <m-button variant="outlined">outlined button</m-button>
+      <m-button variant="raised">raised button</m-button>
+      <m-button variant="unelevated">unelevated button</m-button>
+      <h4>disabled</h4>
+      <m-button disabled>text button</m-button>
+      <m-button variant="outlined" disabled>outlined button</m-button>
+      <m-button variant="raised" disabled>raised button</m-button>
+      <m-button variant="unelevated" disabled>unelevated button</m-button>
+      <h3>icon</h3>
+      <m-icon></m-icon>
 
       <!-- <input type="button" value="add outline" id="add" />
       <input type="button" value="remove outline" id="update" />
@@ -22,6 +34,11 @@
           document.querySelector('#button-outline').removeAttribute('outline')
         })
       </script> -->
+      <script>
+        document.querySelector('m-button').addEventListener('click', (e) => {
+          console.log(e)
+        })
+      </script>
     </div>
   </body>
 </html>
