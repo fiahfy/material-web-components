@@ -2,4 +2,3 @@
 
 import './button'
 import './icon-button'
-// import './icon'

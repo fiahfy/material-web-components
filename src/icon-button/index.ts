@@ -1,3 +1,4 @@
+import { MDCRipple } from '@material/ripple'
 // eslint-disable-next-line
 // @ts-ignore
 import css from 'bundle-text:./index.scss'
@@ -18,25 +19,14 @@ class IconButton extends HTMLElement {
     super()
     this.attachShadow({ mode: 'open' })
     this.shadowRoot?.append(template.content.cloneNode(true))
-    this.shadowRoot
-      ?.querySelector('slot')
-      ?.addEventListener('slotchange', (e) => {
-        console.log(e)
-        // if (!(e.currentTarget instanceof HTMLSlotElement)) {
-        //   return
-        // }
-        // e.currentTarget.assignedNodes().forEach((node) => {
-        //   if (!(node instanceof HTMLElement)) {
-        //     return
-        //   }
-        //   console.log(node)
-        //   node.classList.add('mdc-button__icon')
-        //   node.setAttribute('aria-hidden', 'true')
-        // })
-      })
   }
   connectedCallback() {
-    //
+    const button = this.shadowRoot?.querySelector('button')
+    if (!button) {
+      return
+    }
+    const ripple = new MDCRipple(button)
+    ripple.unbounded = true
   }
   disconnectedCallback() {
     //
