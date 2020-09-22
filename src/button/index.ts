@@ -10,35 +10,18 @@ template.innerHTML = `
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <button class="mdc-button">
     <div class="mdc-button__ripple"></div>
-    <slot name="leading-icon"></slot>
     <span class="mdc-button__label"><slot /></span>
   </button>
 `
 
 class Button extends HTMLElement {
   static get observedAttributes() {
-    return ['disabled', 'variant']
+    return ['disabled', 'variant', 'leading-icon', 'trailing-icon']
   }
   constructor() {
     super()
     this.attachShadow({ mode: 'open' })
     this.shadowRoot?.append(template.content.cloneNode(true))
-    this.shadowRoot
-      ?.querySelector('slot')
-      ?.addEventListener('slotchange', (e) => {
-        console.log(e)
-        if (!(e.currentTarget instanceof HTMLSlotElement)) {
-          return
-        }
-        e.currentTarget.assignedNodes().forEach((node) => {
-          if (!(node instanceof HTMLElement)) {
-            return
-          }
-          console.log(node)
-          node.classList.add('mdc-button__icon')
-          node.setAttribute('aria-hidden', 'true')
-        })
-      })
   }
   connectedCallback() {
     const button = this.shadowRoot?.querySelector('button')
@@ -83,6 +66,24 @@ class Button extends HTMLElement {
         button.classList.remove('mdc-button--raised')
         button.classList.remove('mdc-button--unelevated')
         break
+    }
+    // leading-icon, trailing-icon
+    button.querySelectorAll('i').forEach((e) => e.remove())
+    const leadingIcon = this.getAttribute('leading-icon')
+    if (leadingIcon) {
+      const icon = document.createElement('i')
+      icon.classList.add('material-icons', 'mdc-button__icon')
+      icon.setAttribute('aria-hidden', 'true')
+      icon.textContent = leadingIcon
+      button.insertBefore(icon, button.querySelector('span'))
+    }
+    const trailingIcon = this.getAttribute('trailing-icon')
+    if (trailingIcon) {
+      const icon = document.createElement('i')
+      icon.classList.add('material-icons', 'mdc-button__icon')
+      icon.setAttribute('aria-hidden', 'true')
+      icon.textContent = trailingIcon
+      button.append(icon)
     }
   }
 }
