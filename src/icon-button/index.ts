@@ -1,3 +1,5 @@
+// @see https://github.com/material-components/material-components-web/tree/master/packages/mdc-icon-button
+// @see https://m2.material.io/develop/web/components/buttons/icon-buttons
 import { MDCRipple } from '@material/ripple'
 // eslint-disable-next-line
 // @ts-ignore
@@ -8,7 +10,11 @@ template.innerHTML = `
   <style>${css}</style>
   <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <button class="material-icons mdc-icon-button"><slot /></button>
+  <button class="mdc-icon-button">
+    <div class="mdc-icon-button__ripple"></div>
+    <span class="mdc-icon-button__focus-ring"></span>
+    <i class="material-icons"><slot /></i>
+  </button>
 `
 
 class IconButton extends HTMLElement {

@@ -1,13 +1,35 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Roboto+Mono:400,500|Material+Icons" rel="stylesheet">
-    <script src="../src/index.ts" defer></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Roboto+Mono:400,500|Material+Icons"
+      rel="stylesheet"
+    />
+    <script type="module" src="../src/index.ts" defer></script>
   </head>
   <body>
-    <div>
-      <h2>Button</h2>
-      <h3>Variant</h3>
+    <h2>Buttons</h2>
+
+    <h3>Text button</h3>
+    <m-button>text button</m-button>
+    <m-button icon="bookmark">text button plus icon</m-button>
+
+    <h3>Outlined button</h3>
+    <m-button variant="outlined">outlined button</m-button>
+    <m-button icon="bookmark" variant="outlined">
+      outlined button plus icon
+    </m-button>
+
+    <h3>Contained button</h3>
+    <m-button variant="raised">contained button</m-button>
+    <m-button icon="bookmark" variant="raised">
+      contained button plus icon
+    </m-button>
+
+    <h2>Icon buttons</h2>
+    <m-icon-button>favorite</m-icon-button>
+
+    <!-- <h3>Variant</h3>
       <m-button>text button</m-button>
       <m-button variant="outlined">outlined button</m-button>
       <m-button variant="raised">raised button</m-button>
@@ -21,10 +43,9 @@
       <m-button variant="raised" leading-icon="bookmark">button</m-button>
       <m-button variant="raised" trailing-icon="bookmark">button</m-button>
       <h2>Icon Button</h2>
-      <m-icon-button>bookmark</m-icon-button>
-      
+      <m-icon-button>bookmark</m-icon-button> -->
 
-      <!-- <input type="button" value="add outline" id="add" />
+    <!-- <input type="button" value="add outline" id="add" />
       <input type="button" value="remove outline" id="update" />
       <script>
         document.querySelector('#add').addEventListener('click', () => {
@@ -38,11 +59,11 @@
           document.querySelector('#button-outline').removeAttribute('outline')
         })
       </script> -->
-      <script>
-        document.querySelector('m-button').addEventListener('click', (e) => {
-          console.log(e)
-        })
-      </script>
-    </div>
+
+    <script>
+      document.querySelector('m-button').addEventListener('click', (e) => {
+        console.log(e)
+      })
+    </script>
   </body>
 </html>
